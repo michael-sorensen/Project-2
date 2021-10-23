@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>US Consumer Discretionary Spending 1997 - 2019</title>
 
+        <!-- Leaflet CSS-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""/>
+        <!-- Our CSS -->
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    </head>
+
+    <body class="body">
+        <header class="header">
+            <h1>US Consumer Discretionary Spending 1997 - 2019</h1>
+            <h3>Northwestern Data Science & Visualization Bootcamp Project 2</h3>
+            <h5>Eugene Kikuchi, Priscilla Robinson, Schaefer Shaughnessy, Michael Sorenson</h5>
+        </header>
+        
+        <main>
+            <div id="map-id"></div>
+        </main>
+        <!-- Leaflet JavaScript -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+        
+        <!-- API key -->
+        <script type="text/javascript" src="static/js/config.js"></script>
+
+        <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+        
+        <!-- Our JS-->
+        <script type="text/javascript" src="static/js/logic.js"></script>
+
+    </body>
+
+</html> 
