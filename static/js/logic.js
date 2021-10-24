@@ -17,6 +17,6 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
   //load in geo data
 
-  stateLines = "static/data/stateLines.geojson";
+  stateLines = "static/data/stateBorders.geojson";
 
-  L.geoJson(stateLines).addTo(myMap);
+  L.geoJSON(stateLines).addTo(myMap);
