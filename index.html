@@ -6,8 +6,8 @@
 
         <!-- Leaflet CSS-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-            crossorigin=""/>
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
         <!-- Our CSS -->
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
     </head>
@@ -19,23 +19,23 @@
             <h5>Eugene Kikuchi, Priscilla Robinson, Schaefer Shaughnessy, Michael Sorenson</h5>
         </header>
         
-        <main>
-            <div id="map-id"></div>
-        </main>
+        
+        <div id="map"></div>
+        
         <!-- Leaflet JavaScript -->
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-            crossorigin=""></script>
-        
-        <!-- API key -->
+         <!-- Leaflet JS-->
+         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+         crossorigin=""></script>
+        <!-- d3 JavaScript -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
+        <!-- Leaflet-Choropleth JavaScript -->
+        <script type="text/javascript" src="static/js/choropleth.js"></script>
+
+        <!-- Our JS -->
         <script type="text/javascript" src="static/js/config.js"></script>
-
-        <!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-        
-        <!-- Our JS-->
         <script type="text/javascript" src="static/js/logic.js"></script>
-
     </body>
 
 </html> 

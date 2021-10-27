@@ -3,7 +3,7 @@
 // https://leafletjs.com/examples/choropleth/example.html
 
 //create map object
-var myMap = L.map("map-id").setView([37.8, -96], 4);
+var myMap = L.map("map").setView([37.8, -96], 4);
 
 //adding tile layer
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -17,6 +17,6 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
   //load in geo data
 
-  stateLines = "static/data/stateBorders.geojson";
+  var stateLines = "static/data/stateData.geojson";
 
   L.geoJSON(stateLines).addTo(myMap);
