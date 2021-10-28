@@ -9,3 +9,7 @@
 .body {
     background-color: cadetblue;
 }
+
+#map { 
+    height: 400px; 
+}
