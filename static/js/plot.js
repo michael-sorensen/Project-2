@@ -43,7 +43,6 @@ function plot() {
         z: spending,
         min: minSpend,
         zmax: maxSpend,
-        bgcolor: "black",
         colorbar: {
           y: 0,
           yanchor: "bottom",
@@ -55,7 +54,7 @@ function plot() {
     
        console.log(data);
     
-       var layout = {mapbox: {style: "dark", center: {lon: -100, lat: 45}, zoom: 2}, width: 600, height: 400, margin: {t: 0, b: 0}};
+       var layout = {mapbox: {style: "light", center: {lon: -100, lat: 45}, zoom: 2}, width: 600, height: 400, margin: {t: 0, b: 0}};
        
        var config = {mapboxAccessToken: API_KEY};
        
