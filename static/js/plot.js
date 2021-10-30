@@ -47,7 +47,7 @@ function plot() {
           y: 0,
           yanchor: "bottom",
           title: {
-            text: "2019 Spending in Millions ($USD)",
+            text: "2019 Personal Consumption Expenditures in Millions ($USD)",
             side: "right"
           }}
        }];
