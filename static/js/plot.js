@@ -1,15 +1,11 @@
-// I want to scale the color for each state based on consumer spend for the year
-// The hover pop up will show state abbrev & total spend
-// https://plotly.com/javascript/mapbox-county-choropleth/
-
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
 
 const baseURL = "http://nubc-project2.herokuapp.com/api/exp_by_year/"
 var year = 2019;
 var url = baseURL + year;
 var apiCall = d3.json(url);
-console.log(apiCall);
-
-
 
 function plot() {
 
@@ -30,11 +26,6 @@ function plot() {
     minSpend = Math.min(...spending);
     maxSpend = Math.max(...spending);
 
-    console.log(spending);
-    console.log(stateAbbrev);
-    console.log(minSpend);
-    console.log(maxSpend);
-    
     var data = [{
         type: "choroplethmapbox", 
         name: "Personal Consumption Expenditures by State (2019)", 
@@ -43,27 +34,38 @@ function plot() {
         z: spending,
         zmin: minSpend,
         zmax: maxSpend,
-        colorbar: {
+        colorscale:[[0, '#C6D4AF'],[.3, '#839F56'],[1, '#58693A']],
+        colorbar:{
           y: 0,
           yanchor: "bottom",
           title: {
-            text: "2019 Personal Consumption Expenditures in Millions ($USD)",
-            side: "right"
+            text: "2019 Personal Consumption Expenditures",
+            side: "right",
+            font:{
+                size:15,
+                family: 'Gothic A1, sans-serif',
+                color:'white',
+                texttransform:'uppercase'
+              }
           }}
        }];
     
-       console.log(data);
     
-       var layout = {mapbox: {style: "light", center: {lon: -100, lat: 45}, zoom: 2}, width: 600, height: 400, margin: {t: 0, b: 0}};
+       var layout = {
+           mapbox: {style: "mapbox://styles/michaelsorensen/ckvh9qgpx023g14p877xtf9e4", center: {lon: -100, lat: 38}, zoom: 3}, 
+           margin: {t: 0, b: 0, l:0, r:0},
+           plot_bgcolor:'rgba(0,0,0,0)',
+           paper_bgcolor:'rgba(0,0,0,0)',
+           yaxis:{
+               color:"white"
+           }};
        
-       var config = {mapboxAccessToken: API_KEY};
+       var config = {mapboxAccessToken: API_KEY, responsive: true};
        
        Plotly.newPlot("map", data, layout, config);      
     }
+    
   );
 };
 
 plot();
-
-
-
