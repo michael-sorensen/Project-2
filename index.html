@@ -1,46 +1,178 @@
 <!DOCTYPE html>
 <html lang ="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>US Consumer Discretionary Spending 1997 - 2019</title>
+<head>
+    <meta charset="UTF-8">
+    <title>US Consumer Discretionary Spending 1997 - 2019</title>
+    
+    <!-- Leaflet CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
 
-        <!-- Leaflet CSS-->
-        <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>-->
-        
-        <!-- Our CSS -->
-        <link rel="stylesheet" type="text/css" href="static/css/style.css">
-        <!--Plotly-->
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    </head>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
-    <body class="body">
-        <header class="header">
-            <h1>US Consumer Discretionary Spending 1997 - 2019</h1>
-            <h3>Northwestern Data Science & Visualization Bootcamp Project 2</h3>
-            <h5>Eugene Kikuchi, Priscilla Robinson, Schaefer Shaughnessy, Michael Sorenson</h5>
-        </header>
-        
-                
-        <div id="map"></div>
-          
-        
-        
-        <!-- Leaflet JavaScript -->
-         <!-- Leaflet JS-->
-         <!--<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-         crossorigin=""></script>-->
-        <!-- d3 JavaScript -->
-        <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        <!-- Leaflet-Choropleth JavaScript -->
-        <!--<script type="text/javascript" src="static/js/choropleth.js"></script>-->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <!-- Our JS -->
-        <script type="text/javascript" src="static/js/config.js"></script>
-        <script type="text/javascript" src="static/js/plot.js"></script>
-    </body>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!--Plotly-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <!--D3-->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!--AM Charts | Chart Race JS-->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        $('div.hidden').fadeIn(2000).removeClass('hidden').css("display","");
+    });
+
+    $(window).on("load",function() {
+  function fade(pageLoad) {
+  	var windowBottom = $(window).scrollTop() + $(window).innerHeight();
+    var min = 0.3;
+    var max = 1;
+    var threshold = 0.01;
+    
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")<=min+threshold || pageLoad) {$(this).fadeTo(100,max);}
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")>=max-threshold || pageLoad) {$(this).fadeTo(100,min);}
+      }
+    });
+  } fade(true); //fade elements on page-load
+  $(window).scroll(function(){fade(false);}); //fade elements on scroll
+});
+    </script>
+
+<!----HEADER---->
+<div class="container-fluid main">
+    <div class="row-fluid">
+    <div class="col-lg-10 col-md-12">
+    <header class="header">
+        <img class="header-icon" src="static/resources/DNAsset 1_100.svg"/>
+        <div class="hidden">
+            <h1 class="title ">US Consumer Discretionary Spending 1997 - 2019</h1>
+            <h3 class="title">Northwestern Data Science & Visualization Bootcamp | Project 2</h3>
+            <!--<h5>Eugene Kikuchi, Priscilla Robinson, Schaefer Shaughnessy, Michael Sorensen</h5>-->
+        </div>
+    </header>
+    </div>
+    
+    <div class="col-lg-2 col-md-12">
+        <div class="btn-group hidden">
+            <a href="https://github.com/michael-sorensen/Project-2"><button><img class="button-icon" src="static/resources/git-icon.svg"/><div class="button-text">
+                    Github</div></button></a>
+            <a href="https://www.kaggle.com/davidbroberts/us-personal-expenditures-by-state-19972019"><button><img class="button-icon" src="static/resources/data-icon.svg"/><div class="button-text">Data</div></button></a>  
+        </div>
+    </div>
+</div>
+</div>
+</head>
+<!----/HEADER---->
+<!----BODY---->
+<body>
+<div class="container-fluid main">
+<!----SIDEBAR---->
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="col-lg-3"> 
+    <div class="card-sidebar">
+        <div class="card-body hidden">
+            <h2 class="subhead">OVERVIEW</h2>
+            <p class="summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem perferendis commodi in. Recusandae quam perspiciatis quia porro itaque delectus error, ducimus dolor optio voluptate nisi obcaecati nulla quae quibusdam, ea consequuntur magni enim Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quaerat culpa perspiciatis non libero commodi, accusantium id eaque aliquid aperiam vel magnam odit magni adipisci consectetur reiciendis nihil laborum amet! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem perferendis commodi in. Recusandae quam perspiciatis quia porro itaque delectus error.</p>
+        </div>
+    </div>
+    
+    <div class="row-fluid fade">
+    <div class="card">
+            <div class="card-body">
+            <h2 class="data">80%</h2>
+                <p class="data-summary">Change in consumer spending enim labore.</p>
+            </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <h2 class="data">$1,800</h2>
+            <p class="data-summary">Average spending in 2010 on car repairs.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="data">$1,800</h2>
+            <p class="data-summary">Average spending in 2010 on car repairs.</p>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+<!----/SIDEBAR---->
+
+<!----BODY CONTENT---->
+<div class="col-lg-9">
+    <div class="row borders-map">
+    <div id="map" style="border-radius: 10px;"></div>
+</div>
+<div class="row">
+        <div id="chartdiv"></div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 borders">
+        <div id="plot"></div>
+        <div class="blue-bg">
+        <h3 class="selector">SELECT A STATE: </h3>
+        <select id="selDataset"></select></div>
+    </div>
+    <div class="col-lg-6 borders">
+        <div id="plot2"></div>
+        <div class="blue-bg">
+            <h3 class="selector">SELECT A STATE: </h3>
+            <select id="selDataset2"></select></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+<!-- API key -->
+<script type="text/javascript" src="static/js/config.js"></script>
+
+<!-- polyfill.io is library for using newer JavaScript features in older browers (such as Object.assign) -->
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+<!-- Our JS-->
+<script type="text/javascript" src="static/js/plots.js"></script>
+<script type="text/javascript" src="static/js/plot.js"></script>
+<script type="text/javascript" src="static/js/race.js"></script>
+<script type="text/javascript" src="static/js/choropleth.js"></script>
+
+</body>
+
 
 </html> 
