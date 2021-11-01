@@ -4,7 +4,7 @@ html * {
     word-break: break-word !important;
 }
 body {
-    background: url('/static/resources/dashboard-bg.jpg') no-repeat center center fixed;
+    background-image: url('/static/resources/dashboard-bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -316,15 +316,3 @@ p.data-summary{
     color:white;
     border:3px solid #3E6AA8;
   }
-
-  .leaflet-popup-content-wrapper {
-    background-color: black;
-}
-
-.leaflet-popup-content-wrapper .leaflet-popup-content {
-    background-color: white;
-}
-
-.leaflet-popup-tip-container {
-    background-color: black;
-}
