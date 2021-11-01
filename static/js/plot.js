@@ -17,7 +17,7 @@ function plot() {
     var spending = [];
     var stateAbbrev = [];
     for (var i=0; i < data.length; i++) {
-      if(data[i].code == "DC") {
+      if(data[i].code == "DC" || data[i].code == "US") {
         continue
       }
       var spend = data[i].dollars;
@@ -41,13 +41,13 @@ function plot() {
         geojson: "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json", 
         locations: stateAbbrev,
         z: spending,
-        min: minSpend,
+        zmin: minSpend,
         zmax: maxSpend,
         colorbar: {
           y: 0,
           yanchor: "bottom",
           title: {
-            text: "2019 Spending in Millions ($USD)",
+            text: "2019 Personal Consumption Expenditures in Millions ($USD)",
             side: "right"
           }}
        }];
