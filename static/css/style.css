@@ -4,7 +4,7 @@ html * {
     word-break: break-word !important;
 }
 body {
-    background-image: url('dashboard-bg.jpg') no-repeat center center fixed;
+    background-image: url('dashboard-bg.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
