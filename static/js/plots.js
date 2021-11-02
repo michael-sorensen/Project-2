@@ -9,7 +9,7 @@ states.forEach(state => {
   d3.select("#selDataset2").append("option").text(state);
 });
 
-var baseUrl = "http://nubc-project2.herokuapp.com/api/sub_by_state2/US"
+var baseUrl = "https://nubc-project2.herokuapp.com/api/sub_by_state2/US"
 function plotting() {
   years = [];
   dollars = [];
@@ -107,7 +107,7 @@ function updatePlot() {
   updatedCategory = [];
   var dropDown = d3.select("#selDataset");
   var selection = dropDown.property("value");
-  var selectedUrl = `http://nubc-project2.herokuapp.com/api/sub_by_state2/${selection}`
+  var selectedUrl = `https://nubc-project2.herokuapp.com/api/sub_by_state2/${selection}`
   d3.json(selectedUrl).then(function(data) {
       data.forEach(function(d) {
         updatedStateName.push(d.geoname);
@@ -124,7 +124,7 @@ plotting();
 
 
 
-var baseUrl = "http://nubc-project2.herokuapp.com/api/sub_by_state2/US"
+var baseUrl = "s://nubc-project2.herokuapp.com/api/sub_by_state2/US"
 function plotting2() {
   years = [];
   dollars = [];
@@ -195,7 +195,7 @@ function updatePlot2() {
   updatedCategory = [];
   var dropDown = d3.select("#selDataset");
   var selection = dropDown.property("value");
-  var selectedUrl = `http://nubc-project2.herokuapp.com/api/sub_by_state2/${selection}`
+  var selectedUrl = `https://nubc-project2.herokuapp.com/api/sub_by_state2/${selection}`
   d3.json(selectedUrl).then(function(data) {
       data.forEach(function(d) {
         updatedStateName.push(d.geoname);

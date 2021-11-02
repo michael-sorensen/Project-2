@@ -2,7 +2,7 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
-const baseURL = "http://nubc-project2.herokuapp.com/api/exp_by_year/"
+const baseURL = "https://nubc-project2.herokuapp.com/api/exp_by_year/"
 var year = 2019;
 var url = baseURL + year;
 var apiCall = d3.json(url);
