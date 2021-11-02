@@ -4,7 +4,7 @@ html * {
     word-break: break-word !important;
 }
 body {
-    background-image: url('https://github.com/michael-sorensen/Project-2/blob/main/static/resources/dashboard-bg.jpg') no-repeat center center fixed;
+    background-image: url('/static/resources/dashboard-bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
