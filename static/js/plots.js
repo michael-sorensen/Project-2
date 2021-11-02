@@ -27,6 +27,7 @@ function plotting() {
       var data = [{
         x: years,
         y: dollars,
+        
         type: "scatter",
         mode:"lines+markers",
         line: {width:4},
@@ -37,20 +38,19 @@ function plotting() {
           groups: category,
           styles: [
             {target: 'Durable goods', value: {marker: {color: '#58693A'}}},
-            {target: 'Nondurable goods', value: {marker: {color: 'CC8500'}}},
+            {target: 'Nondurable goods', value: {marker: {color: '#3E6AA8'}}},
             {target: 'Household consumption expenditures (for services)', value: {marker: {color: '#AC370C'}}},
-            {target: 'Final consumption expenditures of nonprofit institutions serving households (NPISHs)', value: {marker: {color: '#3E6AA8'}}}
+            {target: 'Final consumption expenditures of nonprofit institutions serving households (NPISHs)', value: {marker: {color: '#CC8500'}}}
           ]
         }]
         }];
         var layout = {
-          title:{text:"<b>Spending by State</b>",
-          font: {
-              size:25,
-              family: 'Gothic A1, sans-serif',
-              color:'white',
-              texttransform:'uppercase'
-            }},
+          margin:{
+            t:50,
+            r:50,
+            b:100,
+            l:100
+          },
           plot_bgcolor:'rgba(0,0,0,0)',
           paper_bgcolor:'rgba(0,0,0,0)',
           showlegend:false,
@@ -72,7 +72,7 @@ function plotting() {
               size : 13,
               color : 'white'
             },
-            gridcolor:'#4e535b'
+            gridcolor:'rgba(255,255,255,0)',
           },
           
           yaxis: {
@@ -82,18 +82,19 @@ function plotting() {
               font: {
               family: 'Gothic A1, sans-serif',
               size: 14,
-              color: 'white',
-              padding:40,
+              color: 'white'
             }}, 
-            linecolor:'white', 
+            linecolor:'white',
             mirror: true,
             tickfont: {
               size : 13,
               color : 'white'
-            }
+            },
+            gridcolor:'rgba(255,255,255,.2)'
           },
         };
-      Plotly.newPlot("plot", data, layout);
+        var config = {responsive: true};
+      Plotly.newPlot("plot", data, layout, config);
     });
 };
 
@@ -122,9 +123,6 @@ plotting();
 
 
 
-
-
-var baseUrl = "https://nubc-project2.herokuapp.com/api/sub_by_state2/US"
 function plotting2() {
   years = [];
   dollars = [];
@@ -153,32 +151,28 @@ function plotting2() {
             family: 'Gothic A1, sans-serif',
             size: 18,
             color: 'white'
-
         }
-
-        }];
+      }];
 
 
         var layout = {
-          title:{text:"<b>Spending by State</b>",
-          font: {
-              size:25,
-              family: 'Gothic A1, sans-serif',
-              color:'white',
-              texttransform:'uppercase'
-            }},
-
           textinfo: "label+percent",
           textposition: "outside",
-          automargin: true,
+          margin:{
+            t:50,
+            r:50,
+            b:50,
+            l:50
+          },
           plot_bgcolor:'rgba(0,0,0,0)',
           paper_bgcolor:'rgba(0,0,0,0)',
           showlegend:false,
           hovertemplate:"%{label}<br>%{dollars}",
           autosize:true
-          
         };
-      Plotly.newPlot("plot2", data, layout);
+
+        var config = {responsive: true};
+      Plotly.newPlot("plot2", data, layout, config);
     });
 };
 
@@ -193,7 +187,7 @@ function updatePlot2() {
   updatedDollars = [];
   updatedStateName=[];
   updatedCategory = [];
-  var dropDown = d3.select("#selDataset");
+  var dropDown = d3.select("#selDataset2");
   var selection = dropDown.property("value");
   var selectedUrl = `https://nubc-project2.herokuapp.com/api/sub_by_state2/${selection}`
   d3.json(selectedUrl).then(function(data) {

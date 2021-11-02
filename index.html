@@ -94,30 +94,34 @@
 <div class="col-lg-3"> 
     <div class="card-sidebar">
         <div class="card-body hidden">
-            <h2 class="subhead">OVERVIEW</h2>
+            <div class="card-header">OVERVIEW</div>
             <p class="summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem perferendis commodi in. Recusandae quam perspiciatis quia porro itaque delectus error, ducimus dolor optio voluptate nisi obcaecati nulla quae quibusdam, ea consequuntur magni enim Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quaerat culpa perspiciatis non libero commodi, accusantium id eaque aliquid aperiam vel magnam odit magni adipisci consectetur reiciendis nihil laborum amet! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem perferendis commodi in. Recusandae quam perspiciatis quia porro itaque delectus error.</p>
         </div>
     </div>
     
-    <div class="row-fluid fade">
-    <div class="card">
-            <div class="card-body">
-            <h2 class="data">80%</h2>
-                <p class="data-summary">Change in consumer spending enim labore.</p>
-            </div>
-    </div>
-    
-    <div class="card">
+    <div class="row-fluid">
+    <div class="card fade">
         <div class="card-body">
-            <h2 class="data">$1,800</h2>
-            <p class="data-summary">Average spending in 2010 on car repairs.</p>
+            <h2 class="data">Durable Goods</h2>
+            <hr class="blue">
+            <p class="data-summary"> Includes motor vehicles and parts, furnishings and durable household
+                equipment, recreational goods and vehicles, etc.</p>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card fade">
+        <h2 class="data">Non-Durable Goods</h2>
+        <hr class="blue">
+        <p class="data-summary"> Includes  food and beverages purchased for off-premises consumption,
+            clothing and footwear, gasoline and other energy goods, etc.</p>
+    </div>
+    
+    <div class="card fade">
         <div class="card-body">
-            <h2 class="data">$1,800</h2>
-            <p class="data-summary">Average spending in 2010 on car repairs.</p>
+            <h2 class="data">Services</h2>
+            <hr class="blue">
+            <p class="data-summary"> Includes housing and utilities, health care, transportation, recreation
+                services, food services and accommodations, financial services and insurance, etc.</p>
         </div>
     </div>
     </div>
@@ -128,25 +132,42 @@
 <!----BODY CONTENT---->
 <div class="col-lg-9">
     <div class="row borders-map">
+        <div class="card-header">2019 Personal Consumption Expenditures</div>
     <div id="map" style="border-radius: 10px;"></div>
 </div>
-<div class="row">
+<div class="row borders">
+    <div class="card-header-center">Consumption Expenditures by Category over Year</div>
         <div id="chartdiv"></div>
 </div>
 
-<div class="row">
-    <div class="col-lg-6 borders">
-        <div id="plot"></div>
-        <div class="blue-bg">
-        <h3 class="selector">SELECT A STATE: </h3>
+<div class="row borders fade">
+    <div class="card-header-center">Consumption Expenditures by State
         <select id="selDataset"></select></div>
+        <div id="plot"></div>
+        <div class="lg-container">
+        <ul class="legend">
+            <li><span class="services"></span> Services</li>
+            <li><span class="ndg"></span>Non-Durable Goods</li>
+            <li><span class="dg"></span>Durable Goods</li>
+            <li style="margin-right:0px !important;"><span class="nonprofit"></span>Non-Profits</li>
+        </ul>
     </div>
-    <div class="col-lg-6 borders">
+
+
+</div>
+<div class="row borders fade">
+    <div class="card-header-center">Consumption Expenditures by State<select id="selDataset2"></select></div>
         <div id="plot2"></div>
-        <div class="blue-bg">
-            <h3 class="selector">SELECT A STATE: </h3>
-            <select id="selDataset2"></select></div>
+        <div class="lg-container">
+            <ul class="legend">
+                <li><span class="services"></span> Services</li>
+                <li><span class="ndg"></span>Non-Durable Goods</li>
+                <li><span class="dg"></span>Durable Goods</li>
+                <li style="margin-right:0px !important;"><span class="nonprofit"></span>Non-Profits</li>
+            </ul>
+        </div>
     </div>
+</div>
 </div>
 </div>
 </div>

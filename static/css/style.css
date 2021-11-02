@@ -14,9 +14,7 @@ body {
 #map { 
     height: 100%; 
 }
-.ycbdb541ftick{
-    font-size:100px;
-}
+
 
 
 /*------- HEADER/FOOTER -------*/
@@ -27,12 +25,12 @@ body {
     background-size: cover;
     background-position-x: right;
     border:3px solid #3E6AA8;
-    padding-top: 20px;
-    padding-bottom: 25px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     margin-bottom:16px;
     border-radius: 10px;
     text-align: left;
-    min-height: 150px;
+    min-height: 120px;
     animation: 2s ease-out 0s 1 slideInFromLeft;
 }
 .header-icon{
@@ -133,7 +131,7 @@ div.hidden {
 
 /*-------FONTS-------*/
 h1.title{
-    font-size:20px;
+    font-size:24px;
     letter-spacing: .05em;
     font-weight:900;
     text-transform: uppercase;
@@ -141,35 +139,35 @@ h1.title{
     text-align: left;
     padding-left:10px;
 }
-h2.data:after{
-    content:"";
-    display: inline-block;
-    height: 0.5em;
-    vertical-align: middle;
+hr.blue{
+padding:0px;
     width: 100%;
-    margin-right: -100%;
-    margin-left: 10px;
     border-top: 3px solid #3E6AA8;
 }
 h2.data{
-    font-size:30px;
-    letter-spacing: .05em;
+    font-size:16px;
+    letter-spacing: .02em;
     font-weight:800;
     text-transform: uppercase;
     text-align: left;
     color:white;
-    padding-right:20px;
+    padding-right:12px;
     overflow: hidden;
 }
-h2.subhead{
-    font-size:26px;
+
+
+
+h2.heading{
+    font-size:22px;
     letter-spacing: .05em;
     font-weight:800;
     text-transform: uppercase;
     color:#99B070;
 }
+
 h3.title{
     letter-spacing: .05em;
+    font-size:18px;
     font-weight:400;
     color:white;
     text-align: left;
@@ -184,15 +182,17 @@ p.summary{
     line-height: 2;
     color:#D1DAF0;
     font-weight:500;
+    padding:10px 15px 20px 15px;
 }
 p.data-summary{
-    font-size:16px;
+    font-size:13px;
+    line-height:2;
     text-align:left;
     color:#99B070;
     font-weight:600;
 }
 .selector{
-    font-size:17px;
+    font-size:16px;
     color:white;
     font-weight: 600;
     display: inline;
@@ -202,9 +202,10 @@ p.data-summary{
 
 
 #selDataset{
-    font-size:20px;
+    font-size:16px;
     background-color:black;
-    padding:10px;
+    padding:5px;
+    margin-left:15px;
     color:white;
     border-radius: 5px;
     display: inline;
@@ -212,9 +213,10 @@ p.data-summary{
 }
 
 #selDataset2{
-    font-size:20px;
+    font-size:16px;
     background-color:black;
-    padding:10px;
+    padding:5px;
+    margin-left:15px;
     color:white;
     border-radius: 5px;
     display: inline;
@@ -222,11 +224,12 @@ p.data-summary{
 }
 
 
+
 /*-------CARDS-------*/
 .card-sidebar{
     background-color:rgba(0,0,0,.55);
     background-blend-mode: multiply;
-    padding:20px;
+    /* padding:15px 15px 20px 15px; */
     margin-right:20px;
     margin-bottom:30px;
     border:3px solid #3E6AA8;
@@ -236,32 +239,46 @@ p.data-summary{
 .card{
     background-color:rgba(0,0,0,.55);
     background-blend-mode: multiply;
-    padding:20px;
+    padding:8px 15px 15px 15px;
     margin-bottom:30px;
-    margin-right:10px;
+    margin-right:20px;
     margin-top:15px;
     border:3px solid #3E6AA8;
     border-radius: 10px;
     filter: drop-shadow(-15px 20px 6px #000);
 }
-.card-img{
-    background-image: url("../resources/background.jpg");
-    background-position: left center;
-    background-size: cover;
-    padding:20px;
-    margin-bottom:30px;
-    margin-top:15px;
-    min-height: 280px;
-    border:3px solid #3E6AA8;
+.card-header{
+    width:100%;
+    font-size:17px;
+    letter-spacing:.08em;
+    font-weight:800;
+    text-transform: uppercase;
+    text-align: left;
+    padding:12px 15px 12px 15px;
+    color:white;
+    background-color: #3E6AA8;
 }
+
+.card-header-center{
+    width:100%;
+    font-size:17px;
+    letter-spacing: .08em;
+    font-weight:800;
+    text-transform: uppercase;
+    text-align: center;
+    padding:15px 15px 15px 15px;
+    color:white;
+    background-color: #3E6AA8;
+}
+
 
 .blue-bg{
     background-color:#3E6AA8;
-    padding:10px;
+    padding:4px;
     margin: 0 auto;
     text-align: center;
     margin:10px;
-    border-radius: 10px;
+    border-radius: 7px;
 
 }
 
@@ -271,17 +288,18 @@ p.data-summary{
     width:100%;
     border-radius: 10px;
     filter: drop-shadow(-15px 20px 6px #000);
+    vertical-align: middle;
+    display:inline-block;
 }
 .btn-group button{
     background-color: #3E6AA8;
     border: 3px solid #99B070;
-    padding:14px;
+    padding:10px;
     cursor: pointer;
     width: 100%;
     display: block;
     margin-bottom:20px;
     border-radius: 10px;
-
 }
 .btn-group button:hover{
     background-color:rgba(0,0,0,.55);
@@ -289,30 +307,80 @@ p.data-summary{
     border: 3px solid #3E6AA8;
 }
 .button-icon{
-    height:30px;
+    height:25px;
     display: inline-block;
-    margin-right:20px;
+    margin-right:10px;
     vertical-align: middle;
 }
 .button-text{
-    font-size:19px;
+    font-size:14px;
     font-weight: 800;
     text-transform: uppercase;
     color: white;
     vertical-align: middle;
     display:inline-block;
+    margin-top:3px;
 }
 
 
 
 #chartdiv {
     width: 100%;
-    height: 700px;
-    background-color:rgba(0,0,0,.55);
-    border-radius: 10px;
+    height: 600px;
     margin-top:15px;
     float:left;
     font-family:'Gothic A1', sans-serif;
     color:white;
-    border:3px solid #3E6AA8;
   }
+
+
+
+/* basic positioning */
+.lg-container{
+    padding:10px;
+    border:1.5px solid #3E6AA8;
+    width:fit-content;
+    margin: 0 auto;
+    margin-bottom:20px;
+    display: inline-block;
+    position: relative;
+    /* Move the element to the right by 50% of the container's width */
+    left: 50%; 
+    /* Calculates 50% of the element's width, and moves it by that */ 
+    /* amount across the X-axis to the left */
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.legend { 
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+    text-align: center;
+}
+
+.legend li {
+    float: left;
+    margin-right: 20px;
+    font-size:14px;
+    color:white;
+    font-family: 'Gothic A1, sans-serif';
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.legend span {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin-bottom:12px;
+    margin-right:12px;
+    margin:2px;
+    display:inline;
+}
+
+/* Legend Colors */
+.legend .services {background-color: #AC370C; margin-right:8px;}
+.legend .dg {background-color: #58693A; margin-right:8px;}
+.legend .ndg {background-color: #3E6AA8; margin-right:8px;}
+.legend .nonprofit {background-color: #CC8500; margin-right:8px;}

@@ -37,22 +37,12 @@ function plot() {
         colorscale:[[0, '#C6D4AF'],[.3, '#839F56'],[1, '#58693A']],
         colorbar:{
           y: 0,
-          yanchor: "bottom",
-          title: {
-            text: "2019 Personal Consumption Expenditures",
-            side: "right",
-            font:{
-                size:15,
-                family: 'Gothic A1, sans-serif',
-                color:'white',
-                texttransform:'uppercase'
-              }
-          }}
+          yanchor: "bottom"}
        }];
     
     
        var layout = {
-           mapbox: {style: "mapbox://styles/michaelsorensen/ckvh9qgpx023g14p877xtf9e4", center: {lon: -100, lat: 38}, zoom: 3}, 
+           mapbox: {style: "mapbox://styles/michaelsorensen/ckvh9qgpx023g14p877xtf9e4", center: {lon: -97, lat: 39}, zoom: 3}, 
            margin: {t: 0, b: 0, l:0, r:0},
            plot_bgcolor:'rgba(0,0,0,0)',
            paper_bgcolor:'rgba(0,0,0,0)',

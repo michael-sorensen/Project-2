@@ -5,7 +5,7 @@ am4core.useTheme(am4themes_animated);
 // Themes end
 am4core.globalAdapter.addAll(2)
 var chart = am4core.create("chartdiv", am4charts.XYChart);
-chart.padding(20, 40, 20, 20);
+chart.padding(20, 20, 20, 20);
 chart.responsive.enabled = true;
 chart.numberFormatter.numberFormat = "#,###.";
 var label = chart.plotContainer.createChild(am4core.Label);
@@ -14,7 +14,7 @@ label.y = am4core.percent(95);
 label.horizontalCenter = "right";
 label.verticalCenter = "middle";
 label.dx = -15;
-label.fontSize = 40;
+label.fontSize = 35;
 var playButton = chart.plotContainer.createChild(am4core.PlayButton);
 playButton.x = am4core.percent(90);
 playButton.y = am4core.percent(95);
@@ -29,7 +29,7 @@ playButton.events.on("toggled", function(event) {
   }
 })
 
-var stepDuration = 4000;
+var stepDuration = 6000;
 
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 categoryAxis.renderer.grid.template.location = 0;
@@ -64,17 +64,17 @@ series.dataFields.valueX = "dollars";
 series.tooltipText = "{valueX.value}"
 series.columns.template.strokeOpacity = 0;
 series.columns.template.column.cornerRadiusBottomRight = 5;
-series.columns.maxColumns = 1
+series.columns.maxColumns = 1;
 series.columns.template.column.cornerRadiusTopRight = 5;
 series.interpolationDuration = stepDuration;
 series.interpolationEasing = am4core.ease.linear;
 var labelBullet = series.bullets.push(new am4charts.LabelBullet())
 labelBullet.label.horizontalCenter = "right";
 labelBullet.label.text = "{values.valueX.workingValue}";
-labelBullet.label.fontSize=13;
+labelBullet.label.fontSize=12;
 labelBullet.label.textAlign = "end";
 labelBullet.label.fill = am4core.color("#fff");
-labelBullet.label.dx = -10;
+labelBullet.label.dx = -5;
 labelBullet.label.maxColumns = 1;
 chart.zoomOutButton.disabled = true;
 label.fill = am4core.color("#fff");
