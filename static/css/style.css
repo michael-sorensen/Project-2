@@ -41,10 +41,18 @@ body {
     margin-left:40px;
 }
 .footer{
-    background-color:#3E6AA8;
+    text-align: center;
+    filter: drop-shadow(-15px 20px 6px #000);
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position-x: right;
     color:white;
-    font-size:17px;
+    font-size:11px;
+    letter-spacing: .05em;
+    font-weight:600;
+    text-transform: uppercase;
     padding:20px;
+    border:3px solid #3E6AA8;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -140,9 +148,11 @@ h1.title{
     padding-left:10px;
 }
 hr.blue{
-padding:0px;
     width: 100%;
-    border-top: 3px solid #3E6AA8;
+    border: 1px solid #3E6AA8;
+    margin-top:0;
+    margin-bottom:8px;
+
 }
 h2.data{
     font-size:16px;
@@ -182,7 +192,7 @@ p.summary{
     line-height: 2;
     color:#D1DAF0;
     font-weight:500;
-    padding:10px 15px 20px 15px;
+    padding:10px 15px 10px 15px;
 }
 p.data-summary{
     font-size:13px;
@@ -290,10 +300,11 @@ p.data-summary{
     filter: drop-shadow(-15px 20px 6px #000);
     vertical-align: middle;
     display:inline-block;
+    margin-top:10px;
 }
 .btn-group button{
     background-color: #3E6AA8;
-    border: 3px solid #99B070;
+    border: 2px solid #99B070;
     padding:10px;
     cursor: pointer;
     width: 100%;
@@ -304,7 +315,7 @@ p.data-summary{
 .btn-group button:hover{
     background-color:rgba(0,0,0,.55);
     background-blend-mode: multiply;
-    border: 3px solid #3E6AA8;
+    border: 2px solid #3E6AA8;
 }
 .button-icon{
     height:25px;
