@@ -124,7 +124,7 @@ plotting();
 
 
 
-var baseUrl = "s://nubc-project2.herokuapp.com/api/sub_by_state2/US"
+var baseUrl = "https://nubc-project2.herokuapp.com/api/sub_by_state2/US"
 function plotting2() {
   years = [];
   dollars = [];
