@@ -4,7 +4,7 @@ html * {
     word-break: break-word !important;
 }
 body {
-    background-image: url('./static/resources/dashboard-bg.jpg') no-repeat center center fixed;
+    background-image: url('../resources/dashboard-bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -23,7 +23,7 @@ body {
 .header {
     text-align: center;
     filter: drop-shadow(-15px 20px 6px #000);
-    background-image: url("./static/resources/bg.jpg");
+    background-image: url("../resources/bg.jpg");
     background-size: cover;
     background-position-x: right;
     border:3px solid #3E6AA8;
