@@ -133,7 +133,7 @@ div.hidden {
 
 /*-------FONTS-------*/
 h1.title{
-    font-size:29px;
+    font-size:20px;
     letter-spacing: .05em;
     font-weight:900;
     text-transform: uppercase;
@@ -152,7 +152,7 @@ h2.data:after{
     border-top: 3px solid #3E6AA8;
 }
 h2.data{
-    font-size:40px;
+    font-size:30px;
     letter-spacing: .05em;
     font-weight:800;
     text-transform: uppercase;
@@ -180,13 +180,13 @@ h5{
     font-size:18px;
 }
 p.summary{
-    font-size:17px;
+    font-size:14px;
     line-height: 2;
     color:#D1DAF0;
     font-weight:500;
 }
 p.data-summary{
-    font-size:22px;
+    font-size:16px;
     text-align:left;
     color:#99B070;
     font-weight:600;
