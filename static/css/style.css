@@ -33,6 +33,7 @@ body {
     min-height: 120px;
     animation: 2s ease-out 0s 1 slideInFromLeft;
 }
+
 .header-icon{
     height:90px;
     display: inline;
@@ -40,6 +41,7 @@ body {
     margin-right:25px;
     margin-left:40px;
 }
+
 .footer{
     text-align: center;
     filter: drop-shadow(-15px 20px 6px #000);
@@ -107,10 +109,19 @@ div.hidden {
     animation: 2s ease-out 0s 1 slideInFromRight;
 }
 
+hr.blue{
+    width: 100%;
+    border: 1px solid #3E6AA8;
+    margin-top:0;
+    margin-bottom:8px;
+
+}
+
 .aligned{
     display: flex;
     align-items: center;
 }
+
 .icon{
     display:inline;
     float:left;
@@ -120,6 +131,7 @@ div.hidden {
     height:40px;
     width:auto;
 }
+
 .container2{
     height: 100%;
     display: -webkit-box;
@@ -130,10 +142,22 @@ div.hidden {
         -ms-flex-direction: column;
             flex-direction: column;
 }
+
 .main{
     width:90%;
     margin-top:30px;
 }
+
+#chartdiv {
+    width: 100%;
+    height: 600px;
+    margin-top:15px;
+    float:left;
+    font-family:'Gothic A1', sans-serif;
+    color:white;
+}
+
+
 
 
 
@@ -147,13 +171,7 @@ h1.title{
     text-align: left;
     padding-left:10px;
 }
-hr.blue{
-    width: 100%;
-    border: 1px solid #3E6AA8;
-    margin-top:0;
-    margin-bottom:8px;
 
-}
 h2.data{
     font-size:16px;
     letter-spacing: .02em;
@@ -165,16 +183,6 @@ h2.data{
     overflow: hidden;
 }
 
-
-
-h2.heading{
-    font-size:22px;
-    letter-spacing: .05em;
-    font-weight:800;
-    text-transform: uppercase;
-    color:#99B070;
-}
-
 h3.title{
     letter-spacing: .05em;
     font-size:18px;
@@ -184,9 +192,7 @@ h3.title{
     padding-left:38px;
 
 }
-h5{
-    font-size:18px;
-}
+
 p.summary{
     font-size:14px;
     line-height: 2;
@@ -194,6 +200,7 @@ p.summary{
     font-weight:500;
     padding:10px 15px 10px 15px;
 }
+
 p.data-summary{
     font-size:13px;
     line-height:2;
@@ -201,16 +208,11 @@ p.data-summary{
     color:#99B070;
     font-weight:600;
 }
-.selector{
-    font-size:16px;
-    color:white;
-    font-weight: 600;
-    display: inline;
-    float:inline-start;
-    padding:10px;
-}
 
 
+
+
+/*-------DROPDOWNS-------*/
 #selDataset{
     font-size:16px;
     background-color:black;
@@ -246,6 +248,7 @@ p.data-summary{
     border-radius: 10px;
     filter: drop-shadow(-15px 20px 6px #000);
 }
+
 .card{
     background-color:rgba(0,0,0,.55);
     background-blend-mode: multiply;
@@ -257,6 +260,7 @@ p.data-summary{
     border-radius: 10px;
     filter: drop-shadow(-15px 20px 6px #000);
 }
+
 .card-header{
     width:100%;
     font-size:17px;
@@ -281,16 +285,6 @@ p.data-summary{
     background-color: #3E6AA8;
 }
 
-
-.blue-bg{
-    background-color:#3E6AA8;
-    padding:4px;
-    margin: 0 auto;
-    text-align: center;
-    margin:10px;
-    border-radius: 7px;
-
-}
 
 
 /*-------BUTTONS-------*/
@@ -335,18 +329,7 @@ p.data-summary{
 
 
 
-#chartdiv {
-    width: 100%;
-    height: 600px;
-    margin-top:15px;
-    float:left;
-    font-family:'Gothic A1', sans-serif;
-    color:white;
-  }
-
-
-
-/* basic positioning */
+/*-------LEGEND-------*/
 .lg-container{
     padding:10px;
     border:1.5px solid #3E6AA8;
@@ -390,7 +373,6 @@ p.data-summary{
     display:inline;
 }
 
-/* Legend Colors */
 .legend .services {background-color: #AC370C; margin-right:8px;}
 .legend .dg {background-color: #58693A; margin-right:8px;}
 .legend .ndg {background-color: #3E6AA8; margin-right:8px;}
