@@ -1,8 +1,5 @@
-
-
-//Themes begin
+//Themes
 am4core.useTheme(am4themes_animated);
-// Themes end
 am4core.globalAdapter.addAll(2)
 var chart = am4core.create("chartdiv", am4charts.XYChart);
 chart.padding(20, 20, 20, 20);
@@ -39,14 +36,14 @@ categoryAxis.renderer.inversed = true;
 categoryAxis.renderer.grid.template.disabled = false;
 categoryAxis.renderer.labels.template.fill = am4core.color("#fff");
 categoryAxis.renderer.labels.template.textAlign = 'end';
+categoryAxis.renderer.labels.template.truncate = false;
 categoryAxis.renderer.labels.template.padding(0, 20, 0, 0);
 categoryAxis.renderer.labels.template.fontSize=13;
 categoryAxis.renderer.labels.template.wrap = true;
-categoryAxis.renderer.labels.template.maxWidth = 300;
+categoryAxis.renderer.labels.template.maxWidth = 250;
 categoryAxis.renderer.grid.template.stroke = "#fff";
 categoryAxis.renderer.grid.template.strokeWidth = 1; 
-categoryAxis.renderer.grid.template.strokeOpacity = .1; //make the change more visible for demo purposes
-// base/zero line
+categoryAxis.renderer.grid.template.strokeOpacity = .1;
 categoryAxis.renderer.baseGrid.stroke = "#ff0000";
 
 var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
@@ -56,8 +53,7 @@ valueAxis.rangeChangeDuration = stepDuration;
 valueAxis.extraMax = 0.1;
 valueAxis.renderer.grid.template.stroke = "#fff";
 valueAxis.renderer.grid.template.strokeWidth = 1; 
-valueAxis.renderer.grid.template.strokeOpacity = .1; //make the change more visible for demo purposes
-// base/zero line
+valueAxis.renderer.grid.template.strokeOpacity = .1;
 valueAxis.renderer.baseGrid.stroke = "#ff0000";
 
 var series = chart.series.push(new am4charts.ColumnSeries());
@@ -101,9 +97,6 @@ chart.colors.list = [
   ];
 
 
-  /* CSS HEX */
-
-// as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
 series.columns.template.adapter.add("fill", function(fill, target){
   return chart.colors.getIndex(target.dataItem.index);
 });
@@ -147,10 +140,6 @@ function nextYear() {
     itemsWithNonZero = 25
   }
   
-  
-
-
-
   chart.invalidateRawData();
   label.text = year.toString();
 
@@ -1320,7 +1309,7 @@ categoryAxis.zoom({ start: 0, end: 1 / chart.data.length });
 
 series.events.on("inited", function() {
   setTimeout(function() {
-    playButton.isActive = true; // thisstarts interval
+    playButton.isActive = true;
   }, 2000)
 })
 
